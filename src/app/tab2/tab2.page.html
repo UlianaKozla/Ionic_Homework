@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title color="secondary" [ngClass]="['padding']">
+            Users
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let user of users">
+        <ion-card-header>
+            <img src="http://qnimate.com/wp-content/uploads/2014/03/images2.jpg">
+            <ion-card-subtitle>{{user.name}}</ion-card-subtitle>
+            <ion-card-title>{{user.phone}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            {{user.company.name}}
+            <br>
+            {{user.company.catchPhrase}}
+        </ion-card-content>
+        <ion-button expand="block" color="success" routerLink="/tabs/posts"
+                    [queryParams]="{userId: user.id, start: 0, _limit: 3}">
+                    Show {{user.name}} posts
+        </ion-button>
+    </ion-card>
+</ion-content>

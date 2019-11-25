@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="secondary" [ngClass]="['padding']">
+      Galary
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let photo of photos">
+    <ion-card-header>
+      <ion-card-subtitle>{{photo.author}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-header>
+    <img src="{{photo.download_url}}">
+    </ion-card-header>
+  </ion-card>
+</ion-content>

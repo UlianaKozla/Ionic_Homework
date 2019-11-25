@@ -1,0 +1,15 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Posts</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let post of posts">
+        <ion-card-header>
+            <ion-card-subtitle>{{post.title}}</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>{{post.body}}</ion-card-content>
+    </ion-card>
+    <ion-button expand="full" color="secondary" (click)="addParamsToQuery({_limit: +limit + 3})">Show more posts</ion-button>
+</ion-content>

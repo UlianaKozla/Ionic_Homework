@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title color="secondary" [ngClass]="['padding']">
+      Posts
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content>
+    <ion-toolbar>
+      <ion-buttons slot="primary">
+        <ion-button color="secondary" (click)="vibrate()">Vibrate</ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button color="secondary" (click)="presentAlertConfirm()">Alert</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+
+    <ion-card *ngFor="let post of posts">
+      <ion-card-header>
+        <ion-card-subtitle>{{post.title}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>{{post.body}}</ion-card-content>
+    </ion-card>
+  </ion-content>
